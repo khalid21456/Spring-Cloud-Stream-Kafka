@@ -11,34 +11,44 @@ The application consists of the following components:
 -   **PageEventService:** A service that provides a Kafka consumer to process `PageEvent` messages from a Kafka topic.
 -   **PageEventRestController:** A REST controller that exposes an endpoint to publish `PageEvent` messages to a Kafka topic using Spring Cloud Stream's `StreamBridge`.
 
-## Code Structure
 
-The project structure is organized as follows:
-
+## 📁 Project Structure
+```
 khalid21456-spring-cloud-stream-kafka/
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/example/kafka/
-│   │   │       ├── KafkaApplication.java
-│   │   │       ├── entities/
-│   │   │       │   └── PageEvent.java
-│   │   │       ├── services/
-│   │   │       │   └── PageEventService.java
-│   │   │       └── web/
-│   │   │           └── PageEventRestController.java
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-│       └── java/
-│           └── com/example/kafka/
-│               └── KafkaApplicationTests.java
-└── .mvn/
-└── wrapper/
-└── maven-wrapper.properties
+├── .mvn/
+│   └── wrapper/
+│       └── maven-wrapper.properties
+└── src/
+    ├── main/
+    │   ├── java/
+    │   │   └── com/example/kafka/
+    │   │       ├── KafkaApplication.java           # Main application entry point
+    │   │       ├── entities/
+    │   │       │   └── PageEvent.java              # Event entity/model
+    │   │       ├── services/
+    │   │       │   └── PageEventService.java       # Kafka functional beans
+    │   │       └── web/
+    │   │           └── PageEventRestController.java # REST API controller
+    │   └── resources/
+    │       └── application.properties              # Kafka & Stream configuration
+    └── test/
+        └── java/
+            └── com/example/kafka/
+                └── KafkaApplicationTests.java      # Unit tests
+```
+
+### 📄 Key Files
+
+| File | Description |
+|------|-------------|
+| `KafkaApplication.java` | Spring Boot main application class |
+| `PageEvent.java` | Event model representing page view data |
+| `PageEventService.java` | Contains Producer, Consumer, and Processor beans |
+| `PageEventRestController.java` | REST endpoints for publishing events |
+| `application.properties` | Kafka topics, bindings, and Stream configuration |
 
 
 ## Components
