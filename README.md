@@ -1,5 +1,5 @@
 # Spring Cloud Stream Kafka
-
+![img.png](img.png)
 This project demonstrates a basic Spring Cloud Stream application using Kafka as the message broker. It includes a REST controller to publish events to a Kafka topic and a service to consume those events.
 
 ## Overview
