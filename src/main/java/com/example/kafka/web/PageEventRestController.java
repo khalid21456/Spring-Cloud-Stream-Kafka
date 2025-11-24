@@ -4,12 +4,14 @@ package com.example.kafka.web;
 import com.example.kafka.entities.PageEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.function.StreamBridge;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 import java.util.Random;
+import java.util.function.Function;
 
 @RestController
 public class PageEventRestController {
@@ -24,5 +26,4 @@ public class PageEventRestController {
                 pageEvent);
         return pageEvent;
     }
-
 }
